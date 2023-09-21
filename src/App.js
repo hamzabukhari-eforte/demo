@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./assets/components/header";
+import { Box } from "@mui/material";
+import Report from "./assets/components/pages/report";
+import ReportBtn from "./assets/components/reportBtn";
+
+const handleButtonClick = () => {
+  console.log("Button clicked");
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Header />
+      <Report />
+      <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+        <ReportBtn label="Back to Dashboard" onClick={handleButtonClick} />
+      </Box>
+    </Box>
   );
 }
 
