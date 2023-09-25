@@ -6,7 +6,6 @@ function Fields({ initialValue }) {
   const [value, setValue] = useState(initialValue);
   const [isEditing, setIsEditing] = useState(false);
   const [tempValue, setTempValue] = useState(initialValue);
-
   const handleEdit = () => {
     setIsEditing(true);
   };
@@ -33,6 +32,7 @@ function Fields({ initialValue }) {
   return (
     <Box
       sx={{
+        width: "100%",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -40,21 +40,35 @@ function Fields({ initialValue }) {
       }}
     >
       <TextField
+        name="textField"
         variant="outlined"
         fullWidth
         multiline
         value={isEditing ? tempValue : value}
-        maxRows={2}
         autoFocus
         onChange={handleChange}
         disabled={!isEditing}
-        placeholder={isEditing ? "" : "Enter something..."}
+        placeholder={isEditing ? "" : "TechTax"}
         sx={{
           borderLeft: "3px solid purple",
           backgroundColor: "#EEEDED",
           fontSize: 14,
         }}
       />
+      {/* <textarea
+        className="custom-textarea" // Apply custom CSS class
+        value={tempValue}
+        autoFocus
+        onChange={handleChange}
+        placeholder={isEditing ? "" : "TechTax"}
+        style={{
+          width: "100%",
+          borderLeft: "3px solid purple",
+          backgroundColor: "#EEEDED",
+          fontSize: "14px",
+          resize: "none", // Disable resizing
+        }}
+      /> */}
 
       {!isEditing ? (
         <Button

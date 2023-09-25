@@ -6,7 +6,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 function Report() {
   const initialFieldValues = [
-    { id: 1, heading: "Name of Business", value: "TechTax" },
+    { id: 1, heading: "Name of Business", value: "" },
     {
       id: 2,
       heading: "Problem:",
@@ -38,7 +38,13 @@ function Report() {
     );
     setFieldValues(updatedValues);
   };
-
+  // const updateFieldValue2 = (id) => (heading) => (newValue) => {         ==================Currying
+  //   const updatedValues = fieldValues.map((field) =>
+  //     field.id === id ? { ...field, heading, value: newValue } : field
+  //   );
+  //   setFieldValues(updatedValues);
+  // };
+  // console.log(updateFieldValue2);
   return (
     <>
       <Container
@@ -79,21 +85,27 @@ function Report() {
         </Box>
 
         {/* Field Area of Report */}
-        <Box sx={{ my: 4, display: "flex", flexDirection: "column" }}>
-          {fieldValues.map((field) => (
-            <Box key={field.id}>
-              <Typography sx={{ my: 2 }} variant="h6" component="h2">
+        {fieldValues.map((field) => (
+          <Box key={field.id}>
+            <Box sx={{ display: "flex", flexGrow: 1 }}>
+              <Typography
+                sx={{ my: 2, flexGrow: 1 }}
+                variant="h6"
+                component="h2"
+              >
                 {field.heading}
               </Typography>
-
+            </Box>
+            <Box>
               <Fields
+                sx={{ flexGrow: 1, display: "flex" }}
                 id={field.id}
                 initialValue={field.value}
                 updateField={updateFieldValue}
               />
             </Box>
-          ))}
-        </Box>
+          </Box>
+        ))}
       </Container>
     </>
   );

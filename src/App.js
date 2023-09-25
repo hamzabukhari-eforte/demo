@@ -10,7 +10,7 @@ const handleButtonClick = () => {
 
 function App() {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <Header />
       <Report />
       <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
