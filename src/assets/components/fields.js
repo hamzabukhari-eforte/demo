@@ -11,8 +11,6 @@ function Fields({ initialValue }) {
   };
 
   const handleSave = () => {
-    // setValue(tempValue);
-    // setIsEditing(false);
     const trimmedValue = tempValue.trim();
     if (trimmedValue !== "") {
       setValue(trimmedValue);
