@@ -55,20 +55,6 @@ function Fields({ initialValue }) {
           fontSize: 14,
         }}
       />
-      {/* <textarea
-        className="custom-textarea" // Apply custom CSS class
-        value={tempValue}
-        autoFocus
-        onChange={handleChange}
-        placeholder={isEditing ? "" : "TechTax"}
-        style={{
-          width: "100%",
-          borderLeft: "3px solid purple",
-          backgroundColor: "#EEEDED",
-          fontSize: "14px",
-          resize: "none", // Disable resizing
-        }}
-      /> */}
 
       {!isEditing ? (
         <Button
