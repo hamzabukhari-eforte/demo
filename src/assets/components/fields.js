@@ -1,3 +1,4 @@
+import "resize-observer-polyfill";
 import { Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
